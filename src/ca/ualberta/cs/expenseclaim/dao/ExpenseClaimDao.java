@@ -1,15 +1,19 @@
-/********************************
-  The licenses for most software are designed to take away your
-freedom to share and change it.  By contrast, the GNU General Public
-License is intended to guarantee your freedom to share and change free
-software--to make sure the software is free for all its users.  This
-General Public License applies to most of the Free Software
-Foundation's software and to any other program whose authors commit to
-using it.  (Some other Free Software Foundation software is covered by
-the GNU Lesser General Public License instead.)  You can apply it to
-your programs, too.
+// Copyright (C) 2015 Bo Zhou bzhou2@ualberta.ca
+//
+// This program is free software; you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation; either version 2 of the License, or
+// (at your option) any later version.
+//
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License along
+// with this program; if not, write to the Free Software Foundation, Inc.,
+// 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
- ************************************************************/
 
 package ca.ualberta.cs.expenseclaim.dao;
 
@@ -38,6 +42,7 @@ public class ExpenseClaimDao {
 	private static ExpenseClaimDao dao = null;
 	private int maxId = 0;
 
+	//set tarvel claim information use JSON object
 	private ExpenseClaimDao(Context context) {
 		claimList = new ArrayList<ExpenseClaim>();
 		File file = new File(context.getFilesDir(), FILENAME);
@@ -78,7 +83,8 @@ public class ExpenseClaimDao {
 		}
 		return dao;
 	}
-
+	
+	// save object to claimList and ordered by start date
 	private void save(Context context) {
 		Collections.sort(claimList, new Comparator<ExpenseClaim>() {
 
@@ -118,6 +124,7 @@ public class ExpenseClaimDao {
 		maxId++;
 	}
 
+	// edit Claim information
 	public void update(Context context, ExpenseClaim claim) {
 		for (ExpenseClaim c : claimList) {
 			if (c.getId() == claim.getId()) {
