@@ -33,8 +33,10 @@
 
             <DatePicker
                 android:id="@+id/dp_date"
+                android:calendarViewShown="false"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:fitsSystemWindows="true" />
 
             <TextView
                 style="@style/titleStyle"

@@ -1,3 +1,18 @@
+/********************************
+  The licenses for most software are designed to take away your
+freedom to share and change it.  By contrast, the GNU General Public
+License is intended to guarantee your freedom to share and change free
+software--to make sure the software is free for all its users.  This
+General Public License applies to most of the Free Software
+Foundation's software and to any other program whose authors commit to
+using it.  (Some other Free Software Foundation software is covered by
+the GNU Lesser General Public License instead.)  You can apply it to
+your programs, too.
+
+ ************************************************************/
+
+
+
 package ca.ualberta.cs.expenseclaim.activity;
 
 import java.util.HashMap;
@@ -22,6 +37,7 @@ public class SendEmailActivity extends Activity {
 	private TextView tv_info;
 	private EditText et_address;
 
+	// fetch travel claim information and expense item information
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -50,6 +66,7 @@ public class SendEmailActivity extends Activity {
 		tv_info.setText(sb.toString());
 	}
 
+	// send out a email which includes all information as needed
 	public void send_click(View v) {
 		String address = et_address.getText().toString().trim();
 		if (TextUtils.isEmpty(address)) {
@@ -57,9 +74,14 @@ public class SendEmailActivity extends Activity {
 					.show();
 			return;
 		}
-		Intent intent = new Intent();
-		intent.setAction(Intent.ACTION_SEND);
-		intent.putExtra(Intent.EXTRA_EMAIL, new String[] { address });
+		
+		//http://www.cnblogs.com/crearo-ssy/archive/2012/07/03/2575173.html
+		
+		Intent intent = new Intent(android.content.Intent.ACTION_SENDTO);
+		//intent.setAction(Intent.ACTION_SENDTO);
+		intent.setType("text/plain");
+		intent.putExtra(Intent.EXTRA_EMAIL, "bzhou2@ualberta.ca");
+		//intent.putExtra(Intent.EXTRA_EMAIL, new String[] { address });
 		intent.putExtra(Intent.EXTRA_SUBJECT, "Expense Claim");
 		intent.putExtra(Intent.EXTRA_TEXT, tv_info.getText());
 		startActivity(Intent.createChooser(intent, "Sending mail..."));

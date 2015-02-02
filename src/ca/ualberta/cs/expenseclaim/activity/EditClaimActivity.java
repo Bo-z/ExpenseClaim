@@ -1,3 +1,16 @@
+/********************************
+  The licenses for most software are designed to take away your
+freedom to share and change it.  By contrast, the GNU General Public
+License is intended to guarantee your freedom to share and change free
+software--to make sure the software is free for all its users.  This
+General Public License applies to most of the Free Software
+Foundation's software and to any other program whose authors commit to
+using it.  (Some other Free Software Foundation software is covered by
+the GNU Lesser General Public License instead.)  You can apply it to
+your programs, too.
+
+ ************************************************************/
+
 package ca.ualberta.cs.expenseclaim.activity;
 
 import java.util.Calendar;
@@ -14,6 +27,8 @@ import ca.ualberta.cs.expenseclaim.R;
 import ca.ualberta.cs.expenseclaim.dao.ExpenseClaimDao;
 import ca.ualberta.cs.expenseclaim.domain.ExpenseClaim;
 
+
+// input or edit the information for one claim
 public class EditClaimActivity extends Activity {
 
 	private String operate;
@@ -58,6 +73,8 @@ public class EditClaimActivity extends Activity {
 				calEnd.get(Calendar.DAY_OF_MONTH));
 	}
 
+	
+	// save one travel claim when press save in edit_claim activity
 	public void save_click(View v) {
 		String name=etName.getText().toString().trim();
 		String description = etDescription.getText().toString().trim();
