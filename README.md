@@ -3,7 +3,7 @@
 C301 Assignment 1
 =======
 
-Demo video:http://youtu.be/W0Vi41qgWFc
+Demo video: http://youtu.be/sZK2hJJmFvE 
 
 note: if you have problem when you run app in eclipse, please delete the /bin/res/crunch folder.
 
