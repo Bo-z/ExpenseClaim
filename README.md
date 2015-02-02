@@ -3,7 +3,9 @@
 C301 Assignment 1
 =======
 
-Demo video:http://youtu.be/Q0Kvrqf53_o
+Demo video:http://youtu.be/W0Vi41qgWFc
+
+note: if you have problem when you run app in eclipse, please delete the /bin/res/crunch folder.
 
 I design and implement a simple, attractive, and easy-to-use travel expense tracking application. For each travel claim (for which expenses are to be reimbursed), the application should record expense items.
 
