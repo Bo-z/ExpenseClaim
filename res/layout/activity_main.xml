@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        style="@style/titleStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Kind:" />
+
+    <RadioGroup
+        android:id="@+id/rg_kind"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <RadioButton
+            android:id="@+id/rb_claim"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="Expense Claim" />
+
+        <RadioButton
+            android:id="@+id/rb_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Expense Item" />
+    </RadioGroup>
+
+    <TextView
+        style="@style/titleStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Operate:" />
+
+    <LinearLayout
+        android:id="@+id/rg_operate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/btn_add"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:onClick="add_click"
+            android:text="Add" />
+
+        <Button
+            android:id="@+id/btn_edit"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:onClick="edit_click"
+            android:text="Edit" />
+
+        <Button
+            android:id="@+id/btn_delete"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:onClick="delete_click"
+            android:text="Delete" />
+
+        <Button
+            android:id="@+id/btn_list"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:onClick="list_click"
+            android:text="List" />
+    </LinearLayout>
+
+        <TextView
+        style="@style/titleStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Check:" />
+    
+    <LinearLayout
+        android:id="@+id/rg_check"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/btn_submit"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:onClick="submit_click"
+            android:text="Submit" />
+
+        <Button
+            android:id="@+id/btn_return"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:onClick="return_click"
+            android:text="Return" />
+
+        <Button
+            android:id="@+id/btn_approve"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:onClick="approve_click"
+            android:text="Approve" />
+        <Button
+            android:id="@+id/btn_send"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:onClick="send_click"
+            android:text="Send" />
+        </LinearLayout>
+
+</LinearLayout>
